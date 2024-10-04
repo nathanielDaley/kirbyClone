@@ -1,4 +1,4 @@
-import { makePlayer } from "./entitites";
+import { makePlayer, setControls } from "./entitites";
 import { k } from "./kaboomCtx";
 import { makeMap } from "./utils";
 
@@ -34,6 +34,8 @@ async function gameSetup() {
     k.add(level1Layout);
 
     const kirb = makePlayer(k, level1SpawnPoints.player[0].x, level1SpawnPoints.player[0].y);
+
+    setControls(k, kirb);
 
     k.add(kirb);
 
